@@ -1,0 +1,33 @@
+apply plugin: 'android-library'
+android {
+    useOldManifestMerger true
+    compileSdkVersion 19
+    buildToolsVersion '19.1.0'
+
+    defaultConfig {
+        applicationId 'com.inscription'
+        minSdkVersion 14
+        targetSdkVersion 19
+        versionCode 1002000
+        versionName '1.2.0-SNAPSHOT'
+    }
+    sourceSets {
+        main {
+            manifest.srcFile 'AndroidManifest.xml'
+            java.srcDirs = ['src']
+            resources.srcDirs = ['src']
+            renderscript.srcDirs = ['src']
+            res.srcDirs = ['res']
+            assets.srcDirs = ['assets']
+        }
+    }
+}
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:0.+'
+    }
+}
